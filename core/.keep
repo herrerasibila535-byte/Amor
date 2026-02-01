@@ -1,0 +1,29 @@
+// core/estado.js
+// Sistema de Memoria Viva — Archivo del Amor
+
+export const EstadoEmocional = {
+  latido: 60,
+  intimidad: 0,
+  memorias: [],
+  irreversible: false
+};
+
+export function registrarLatido() {
+  EstadoEmocional.latido += 1;
+}
+
+export function aumentarIntimidad() {
+  EstadoEmocional.intimidad += 1;
+}
+
+export function guardarMemoria(texto, fecha) {
+  EstadoEmocional.memorias.push({
+    texto: texto,
+    fecha: fecha,
+    nivel: EstadoEmocional.intimidad
+  });
+}
+
+export function sellarRecuerdo() {
+  EstadoEmocional.irreversible = true;
+}
